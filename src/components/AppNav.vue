@@ -5,7 +5,7 @@
           <router-link :to="{name: 'Home'}" class="text-sm inline-block p-3 text-gray-800">Home</router-link>
         </li>
         <li>
-          <router-link :to="{name: 'Home'}" class="text-sm inline-block p-3 text-gray-800">Files</router-link>
+          <router-link :to="{name: 'Upload'}" class="text-sm inline-block p-3 text-gray-800">Files</router-link>
         </li>
       </ul>
       <ul class="flex items-center">
@@ -37,8 +37,8 @@ export default {
       logoutAction: 'auth/logout'
     }),
 
-    logout() {
-      this.logoutAction()
+    async logout() {
+      await this.logoutAction()
       this.$router.push({name: 'Home'})
     }
   },
